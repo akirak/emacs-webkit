@@ -79,6 +79,7 @@
 
 (require 'browse-url)
 (require 'eww)
+(require 'ol)
 
 (defvar webkit--id)
 (defvar webkit--buffers)
