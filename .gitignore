@@ -1,1 +1,2 @@
 *.so
+.pre-commit-config.yaml
