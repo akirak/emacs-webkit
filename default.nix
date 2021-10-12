@@ -1,6 +1,6 @@
-{ pkgs ? import <nixpkgs> {}
+{ pkgs ? import <nixpkgs> { }
 , trivialBuild ? pkgs.emacsPackages.trivialBuild
-# user arguments
+  # user arguments
 , packageSrc ? ./.
 , packageVersion ? "git"
 }:
@@ -17,7 +17,8 @@ trivialBuild rec {
   '';
   nativeBuildInputs = with pkgs; [ pkg-config wrapGAppsHook ];
   gstBuildInputs = with pkgs; with gst_all_1; [
-    gstreamer gst-libav
+    gstreamer
+    gst-libav
     gst-plugins-base
     gst-plugins-good
     gst-plugins-bad
@@ -25,7 +26,8 @@ trivialBuild rec {
   ];
   buildInputs = with pkgs; [
     webkitgtk
-    glib gtk3
+    glib
+    gtk3
     glib-networking
     gsettings-desktop-schemas
   ] ++ gstBuildInputs;
